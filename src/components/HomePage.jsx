@@ -4,7 +4,7 @@ import {motion, useMotionValue, useSpring, useTransform} from 'framer-motion'
 import Image from 'next/image'
 import {useEffect, useRef, useState} from 'react'
 
-// const Magnetic = ({children}) => {
+// const Magnetic =const  ({children}) => {
 // 	return (
 // 		<span className="inline-block text-fill">
 // 			{[...children].map((char, index) => (
@@ -40,7 +40,7 @@ const Magnetic = ({children}) => {
 		<span ref={ref} onMouseMove={handleMouseMove} onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)} className="relative inline-block text-fill">
 			{isHovering && (
 				<motion.div
-					className="absolute top-0 left-0 z-[-1] h-10 w-10 rounded-full bg-transparent border-2 border-[#FFFA8D] pointer-events-none "
+					className="absolute top-0 left-0 z-[-1] h-10 w-10 rounded-full bg-transparent border-2 border-[#E8F9FF] pointer-events-none "
 					style={{
 						x,
 						y,
@@ -53,8 +53,8 @@ const Magnetic = ({children}) => {
 					key={index}
 					whileHover={{
 						scale: 1.5,
-						color: '#FFFA8D',
-						textShadow: '0px 0px 4px #FFFA8D',
+						color: '#E8F9FF',
+						textShadow: '0px 0px 4px #E8F9FF',
 					}}
 					transition={{type: 'spring', stiffness: 300, damping: 15}}
 					className="inline-block relative z-10"
@@ -72,20 +72,20 @@ export default function HomePage() {
 			<section id="home">
 				<div className="mx-auto flex flex-col h-screen w-screen items-center justify-center">
 					<div className="w-full h-full flex flex-col justify-center items-center gap-4 cursor-default">
-						<p className="w-full max-w-2xl text-center font-serif text-4xl md:text-6xl text-outline">
+						<p className="w-full max-w-2xl text-center font-bebas text-4xl md:text-6xl text-outline">
 							Hey, I'm <Magnetic children="Ivan" /> <Magnetic children="Hernandez" />
 						</p>
-						<p className="w-full max-w-2xl text-center text-4xl font-serif md:text-6xl text-outline ">
+						<p className="w-full max-w-2xl text-center text-4xl font-bebas md:text-6xl text-outline ">
 							But you can call me <Magnetic children="Ivan" />
 						</p>
-						<div className="font-serif text-white/60 gap-2 text-start mt-2 text-lg">
+						<div className="font-bebas text-white/60 gap-2 text-start mt-2 text-lg">
 							<p>I am 19 years old, I am studying telecommunications engineering, </p>
 							<p>but I learned to program webs by myself.</p>
 						</div>
 					</div>
 					<a href="#work">
 						<motion.div
-							className="cursor-pointer mb-4"
+							className="cursor-pointer mb-4 "
 							animate={{y: [0, -10, 0]}}
 							transition={{
 								duration: 2,
@@ -94,7 +94,7 @@ export default function HomePage() {
 								ease: 'easeInOut',
 							}}
 						>
-							<Image src="/assets/arrow_down.svg" width={30} height={30} />
+							<Image src="/assets/arrow_down.svg" alt="Arrow Down" width={40} height={40} className="fill-current text-[#FFFA8D]" />
 						</motion.div>
 					</a>
 				</div>

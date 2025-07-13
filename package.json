@@ -10,9 +10,10 @@
   },
   "dependencies": {
     "@next/font": "^14.2.15",
+    "atropos": "^2.0.2",
     "framer-motion": "^12.23.3",
     "next": "15.3.5",
-    "react": "^19.0.0",
+    "react": "^19.1.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
