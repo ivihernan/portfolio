@@ -15,8 +15,9 @@ export default function Navbar() {
 		items.map(item => item.toLowerCase()),
 		setActiveItem
 	)
+
 	return (
-		<div className="flex w-screen items-center px-8 py-4">
+		<div className="flex w-screen items-center px-8 py-4 fixed top-0 z-100 backdrop-blur-lg">
 			<nav className="relative mx-auto rounded-2xl bg-white/5 p-4 flex flex-row justify-between items-center w-full max-w-6xl">
 				<div className="flex flex-row justify-center items-center gap-2 text-xs text-white/20">
 					<Image src="/assets/logo_RRSS.png" alt="logo" width={50} height={50} className="rounded-4xl" />

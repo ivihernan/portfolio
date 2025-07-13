@@ -1,12 +1,14 @@
 import Navbar from '@/components/Navbar'
 import HomePage from '@/components/HomePage'
+import Work from '@/components/Work'
 
 export default function Home() {
 	return (
 		<>
 			<Navbar />
-			<div className="w-full">
+			<div>
 				<HomePage />
+				<Work />
 			</div>
 		</>
 	)
