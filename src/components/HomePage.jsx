@@ -94,7 +94,7 @@ export default function HomePage() {
 								ease: 'easeInOut',
 							}}
 						>
-							<Image src="/assets/arrow_down.svg" alt="Arrow Down" width={40} height={40} className="fill-current text-[#FFFA8D]" />
+							<Image src="/assets/arrow_down.svg" alt="Arrow Down" width={40} height={40} className="fill-current invert" />
 						</motion.div>
 					</a>
 				</div>
