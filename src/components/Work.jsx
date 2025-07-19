@@ -6,8 +6,12 @@ import 'atropos/css'
 import {motion} from 'framer-motion'
 
 import Image from 'next/image'
+import {useEffect, useState} from 'react'
 
 export default function Work() {
+	const [isExpanded, setIsExpanded] = useState(false)
+	const [isMobile, setIsMobile] = useState(false)
+
 	const projects = [
 		{
 			title: 'Modem 21',
@@ -15,7 +19,7 @@ export default function Work() {
 			languajes: 'React, Tailwind CSS',
 		},
 		{
-			title: 'Tic Tac Toe',
+			title: 'XO-MUX',
 			image: '/assets/xo-mux.png',
 			languajes: 'Next.js, React',
 		},
@@ -32,13 +36,26 @@ export default function Work() {
 			downloadUrl: '/zip/SimElecciones.zip',
 		},
 	]
+
+	useEffect(() => {
+		const handleResize = () => {
+			setIsMobile(window.innerWidth <= 768)
+		}
+		handleResize()
+		window.addEventListener('resize', handleResize)
+		return () => window.removeEventListener('resize', handleResize)
+	})
+
+	console.log('isMobile:', isMobile)
+	console.log('isExpanded:', isExpanded)
+	const visibleProject = isMobile && !isExpanded ? projects.slice(0, 2) : projects
 	return (
 		<>
 			<section id="work">
-				<div className="mx-auto h-screen w-screen flex flex-col items-center justify-center font-sans">
+				<div className={`mx-auto ${isMobile && !isExpanded ? 'min-h-screen' : 'h-screen'} w-screen flex flex-col items-center justify-start font-sans px-4  transition-all duration-500`}>
 					<div className="h-full w-full flex flex-col justify-end items-center gap-4 cursor-default mb-10">
-						<div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl w-full ">
-							{projects.map((project, index) => {
+						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl w-full ">
+							{visibleProject.map((project, index) => {
 								return (
 									<div key={index} className="bg-white/5 backdrop-blur-sm text-white rounded-2xl shadow-lg overflow-hidden hover:scale-[1.02] transition-transform hover:-translate-1 duration-300 flex flex-col ">
 										<img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
@@ -58,6 +75,12 @@ export default function Work() {
 									</div>
 								)
 							})}
+							{/* Opcion de ver mas solo para cuando estemos en useMotionValue */}
+							{isMobile && (
+								<button onClick={() => setIsExpanded(prev => !prev)} className="mt-6 text-sm text-[#10b981] hover:underline font-mono">
+									{isExpanded ? 'Ver menos' : 'Ver más'}
+								</button>
+							)}
 						</div>
 					</div>
 					<a href="#about">

@@ -72,13 +72,13 @@ export default function HomePage() {
 			<section id="home">
 				<div className="mx-auto flex flex-col h-screen w-screen items-center justify-center">
 					<div className="w-full h-full flex flex-col justify-center items-center gap-4 cursor-default">
-						<p className="w-full max-w-2xl text-center font-bebas text-4xl md:text-6xl text-outline">
+						<div className="w-full max-w-2xl text-center font-bebas text-4xl md:text-6xl text-outline">
 							Hey, I'm <Magnetic children="Ivan" /> <Magnetic children="Hernandez" />
-						</p>
-						<p className="w-full max-w-2xl text-center text-4xl font-bebas md:text-6xl text-outline ">
+						</div>
+						<div className="w-full max-w-2xl text-center text-4xl font-bebas md:text-6xl text-outline ">
 							But you can call me <Magnetic children="Ivan" />
-						</p>
-						<div className="font-bebas text-white/60 gap-2 text-start mt-2 text-lg">
+						</div>
+						<div className="font-bebas text-white/60 gap-2 text-start mt-2 text-lg max-md:px-8">
 							<p>I am 19 years old, I am studying telecommunications engineering, </p>
 							<p>but I learned to program webs by myself.</p>
 						</div>

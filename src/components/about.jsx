@@ -7,13 +7,13 @@ export default function About() {
 	return (
 		<>
 			<section id="about">
-				<div className="mx-auto flex flex-col h-screen w-screen items-center justify-center font-mono">
+				<div className="mx-auto flex flex-col h-screen w-screen items-center justify-center font-mono py-8 ">
 					<div className="w-full h-full flex flex-row justify-center items-center cursor-default">
-						<div className="w-2/3 h-full flex flex-col items-center justify-center">
-							<p className="text-start w-1/2 text-4xl">About</p>
-							<div className="w-1/2 bg-white/80 h-0.5 rounded-2xl"></div>
-							<div className="w-1/2 flex flex-col gap-5 mt-6 ">
-								<p className="">Hello, my name is Ivan Hernandez and I have always been passionate about learning new things and facing new challenges without knowing if they will be successful.</p>
+						<div className="w-2/3 h-full flex flex-col items-center justify-center max-sm:px-4">
+							<p className="text-start w-1/2 text-4xl max-sm:w-full max:sm:text-2xl">About</p>
+							<div className="w-1/2 bg-white/80 h-0.5 rounded-2xl max-sm:w-full"></div>
+							<div className="w-1/2 flex flex-col gap-5 mt-6 max-sm:w-full max-sm:gap-2 max-sm:text-sm">
+								<p>Hello, my name is Ivan Hernandez and I have always been passionate about learning new things and facing new challenges without knowing if they will be successful.</p>
 								<p> I started programming at the age of 16 thanks to my passion for video games and from there I continued studying in a self-taught way.</p>
 								<p>Right now I am studying telecommunications engineering at the UVA but I continue studying programming as it is a hobby for me.</p>
 								<button className="mt-4">
@@ -23,7 +23,7 @@ export default function About() {
 								</button>
 							</div>
 						</div>
-						<div className="h-full flex items-center justify-center ">
+						<div className="h-full flex items-center justify-center px-8">
 							<Image src="/assets/me.png" alt="me" width={300} height={300} className="rounded-2xl overflow-hidden" />
 						</div>
 					</div>

@@ -6,7 +6,9 @@ export function useScrollSpy(ids, setActive) {
 			entries => {
 				entries.forEach(entry => {
 					if (entry.isIntersecting) {
-						setActive(entry.target.id.charAt(0).toUpperCase() + entry.target.id.slice(1))
+						const newActive = entry.target.id.charAt(0).toUpperCase() + entry.target.id.slice(1)
+						setActive(newActive)
+						history.replaceState(null, '', `#${entry.target.id}`)
 					}
 				})
 			},

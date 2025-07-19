@@ -16,8 +16,6 @@ export default function Navbar() {
 		setActiveItem
 	)
 
-	const toggleMobileMenu = () => setMobileOpen(!mobileOpen)
-
 	return (
 		<div className="flex w-screen items-center px-8 py-4 fixed top-0 z-100 backdrop-blur-lg max-md:flex-col">
 			<nav className="relative mx-auto rounded-2xl bg-white/5 p-4 flex flex-row justify-between items-center w-full max-w-6xl">
@@ -33,7 +31,7 @@ export default function Navbar() {
 							<li key={index}>
 								<a
 									onClick={() => {
-										setIsActive(!isActive)
+										setMobileOpen(!mobileOpen)
 										setActiveItem(item)
 									}}
 									href={`#${item.toLowerCase()}`}
