@@ -46,8 +46,6 @@ export default function Work() {
 		return () => window.removeEventListener('resize', handleResize)
 	})
 
-	console.log('isMobile:', isMobile)
-	console.log('isExpanded:', isExpanded)
 	const visibleProject = isMobile && !isExpanded ? projects.slice(0, 2) : projects
 	return (
 		<>
