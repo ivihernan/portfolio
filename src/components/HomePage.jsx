@@ -78,7 +78,7 @@ export default function HomePage() {
 						<div className="w-full max-w-2xl text-center text-4xl font-bebas md:text-6xl text-outline ">
 							But you can call me <Magnetic children="Ivan" />
 						</div>
-						<div className="font-bebas text-white/60 gap-2 text-start mt-2 text-lg max-md:px-8">
+						<div className="font-bebas text-white/60 gap-2 text-start mt-2 text-xl max-sm:text-lg max-md:px-8">
 							<p>I am 19 years old, I am studying telecommunications engineering, </p>
 							<p>but I learned to program webs by myself.</p>
 						</div>

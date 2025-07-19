@@ -52,7 +52,7 @@ export default function Work() {
 	return (
 		<>
 			<section id="work">
-				<div className={`mx-auto ${isMobile && !isExpanded ? 'min-h-screen' : 'h-screen'} w-screen flex flex-col items-center justify-start font-sans px-4  transition-all duration-500`}>
+				<div className={`mx-auto ${isMobile ? 'min-h-screen' : 'h-screen'} w-screen flex flex-col items-center justify-start font-sans px-4  transition-all duration-500 max-sm:py-16`}>
 					<div className="h-full w-full flex flex-col justify-end items-center gap-4 cursor-default mb-10">
 						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl w-full ">
 							{visibleProject.map((project, index) => {
