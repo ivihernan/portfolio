@@ -40,7 +40,7 @@ const Magnetic = ({children}) => {
 		<span ref={ref} onMouseMove={handleMouseMove} onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)} className="relative inline-block text-fill">
 			{isHovering && (
 				<motion.div
-					className="absolute top-0 left-0 z-[-1] h-10 w-10 rounded-full bg-transparent border-2 border-[#E8F9FF] pointer-events-none "
+					className="absolute top-0 left-0 z-[-1] h-10 w-10 rounded-full bg-transparent border-2 border-[#B6F500] pointer-events-none "
 					style={{
 						x,
 						y,
@@ -53,8 +53,8 @@ const Magnetic = ({children}) => {
 					key={index}
 					whileHover={{
 						scale: 1.5,
-						color: '#E8F9FF',
-						textShadow: '0px 0px 4px #E8F9FF',
+						color: '#B6F500',
+						textShadow: '0px 0px 4px #B6F500',
 					}}
 					transition={{type: 'spring', stiffness: 300, damping: 15}}
 					className="inline-block relative z-10"
@@ -66,7 +66,7 @@ const Magnetic = ({children}) => {
 	)
 }
 
-export default function HomePage() {
+export default function HomePage({modeDark}) {
 	return (
 		<>
 			<section id="home">
@@ -78,7 +78,7 @@ export default function HomePage() {
 						<div className="w-full max-w-2xl text-center text-4xl font-bebas md:text-6xl text-outline ">
 							But you can call me <Magnetic children="Ivan" />
 						</div>
-						<div className="font-bebas text-white/60 gap-2 text-start mt-2 text-xl max-sm:text-lg max-md:px-8">
+						<div className={`font-bebas gap-2 text-start mt-2 text-xl max-sm:text-lg max-md:px-8 ${modeDark === 'Dark' ? 'text-white/60' : 'text-black/50'}`}>
 							<p>I am 19 years old, I am studying telecommunications engineering, </p>
 							<p>but I learned to program webs by myself.</p>
 						</div>
@@ -94,7 +94,7 @@ export default function HomePage() {
 								ease: 'easeInOut',
 							}}
 						>
-							<Image src="/assets/arrow_down.svg" alt="Arrow Down" width={40} height={40} className="fill-current invert" />
+							<Image src="/assets/arrow_down.svg" alt="Arrow Down" width={40} height={40} className={`fill-current ${modeDark === 'Dark' ? 'invert' : ''}`} />
 						</motion.div>
 					</a>
 				</div>

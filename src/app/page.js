@@ -1,19 +1,28 @@
+'use client'
+
+import {useState, useEffect} from 'react'
 import Navbar from '@/components/Navbar'
 import HomePage from '@/components/HomePage'
 import Work from '@/components/Work'
-import About from '@/components/about'
+import About from '@/components/About'
 import Footer from '@/components/Footer'
 
 export default function Home() {
+	const [modeDark, setModeDark] = useState('Dark')
+
+	useEffect(() => {
+		document.documentElement.classList.toggle('dark', modeDark === 'Dark')
+	}, [modeDark])
+
 	return (
 		<>
-			<Navbar />
+			<Navbar modeDark={modeDark} setModeDark={setModeDark} />
 			<div>
-				<HomePage />
-				<Work />
-				<About />
+				<HomePage modeDark={modeDark} />
+				<Work modeDark={modeDark} />
+				<About modeDark={modeDark} />
 			</div>
-			<Footer />
+			<Footer modeDark={modeDark} />
 		</>
 	)
 }

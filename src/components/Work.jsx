@@ -1,14 +1,11 @@
 'use client'
 
-import Atropos from 'atropos/react'
-import 'atropos/css'
-
 import {motion} from 'framer-motion'
 
 import Image from 'next/image'
 import {useEffect, useState} from 'react'
 
-export default function Work() {
+export default function Work({modeDark}) {
 	const [isExpanded, setIsExpanded] = useState(false)
 	const [isMobile, setIsMobile] = useState(false)
 
@@ -17,11 +14,13 @@ export default function Work() {
 			title: 'Modem 21',
 			image: '/assets/logo1.png',
 			languajes: 'React, Tailwind CSS',
+			URL: 'https://blackjack-orcin-xi.vercel.app/',
 		},
 		{
 			title: 'XO-MUX',
 			image: '/assets/xo-mux.png',
 			languajes: 'Next.js, React',
+			URL: 'https://ivihernan.vercel.app',
 		},
 		{
 			title: 'Telefit',
@@ -55,13 +54,13 @@ export default function Work() {
 						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl w-full ">
 							{visibleProject.map((project, index) => {
 								return (
-									<div key={index} className="bg-white/5 backdrop-blur-sm text-white rounded-2xl shadow-lg overflow-hidden hover:scale-[1.02] transition-transform hover:-translate-1 duration-300 flex flex-col ">
+									<div key={index} className={`backdrop-blur-sm  rounded-2xl shadow-lg overflow-hidden hover:scale-[1.02] transition-transform hover:-translate-1 duration-300 flex flex-col ${modeDark === 'Dark' ? 'bg-white/5 text-white' : 'text-black/50 bg-gray-100/50'}`}>
 										<img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
 										<div className="p-4 flex flex-col gap-2">
 											<h3 className="text-lg font-semibold ">{project.title}</h3>
-											<p className="text-sm text-white/60 italic">{project.languajes}</p>
+											<p className={`text-sm italic ${modeDark === 'Dark' ? 'text-white/60' : 'text-black/50'}`}>{project.languajes}</p>
 											{project.downloadUrl === undefined ? (
-												<a href="https://example.com" className="inline-block text-sm text-[#10b981] hover:underline">
+												<a href={project.URL} target="_blank" className="inline-block text-sm text-[#10b981] hover:underline">
 													Visit Web
 												</a>
 											) : (
@@ -92,7 +91,7 @@ export default function Work() {
 								ease: 'easeInOut',
 							}}
 						>
-							<Image src="/assets/arrow_down.svg" alt="Arrow Down" width={40} height={40} className="fill-current invert" />
+							<Image src="/assets/arrow_down.svg" alt="Arrow Down" width={40} height={40} className={`fill-current  ${modeDark === 'Dark' ? 'invert' : ''}`} />
 						</motion.div>
 					</a>
 				</div>

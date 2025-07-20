@@ -3,16 +3,16 @@
 import {motion} from 'framer-motion'
 import Image from 'next/image'
 
-export default function About() {
+export default function About({modeDark}) {
 	return (
 		<>
 			<section id="about">
 				<div className="mx-auto flex flex-col h-screen w-screen items-center justify-center font-mono py-8 ">
 					<div className="w-full h-full flex flex-row justify-center items-center cursor-default">
 						<div className="w-2/3 h-full flex flex-col items-center justify-center max-sm:px-4">
-							<p className="text-start w-1/2 text-4xl max-sm:w-full max:sm:text-2xl">About</p>
-							<div className="w-1/2 bg-white/80 h-0.5 rounded-2xl max-sm:w-full"></div>
-							<div className="w-1/2 flex flex-col gap-5 mt-6 max-sm:w-full max-sm:gap-2 max-sm:text-sm">
+							<p className={`text-start w-1/2 text-4xl max-sm:w-full max:sm:text-2xl ${modeDark === 'Dark' ? 'text-white/80' : 'text-black/50'}`}>About</p>
+							<div className={`w-1/2  h-0.5 rounded-2xl max-sm:w-full ${modeDark === 'Dark' ? 'bg-white/80' : 'bg-black/50'}`}></div>
+							<div className={`w-1/2 flex flex-col gap-5 mt-6 max-sm:w-full max-sm:gap-2 max-sm:text-sm ${modeDark === 'Dark' ? 'text-white/80' : 'text-black/50'}`}>
 								<p>Hello, my name is Ivan Hernandez and I have always been passionate about learning new things and facing new challenges without knowing if they will be successful.</p>
 								<p> I started programming at the age of 16 thanks to my passion for video games and from there I continued studying in a self-taught way.</p>
 								<p>Right now I am studying telecommunications engineering at the UVA but I continue studying programming as it is a hobby for me.</p>
@@ -38,7 +38,7 @@ export default function About() {
 								ease: 'easeInOut',
 							}}
 						>
-							<Image src="/assets/arrow_down.svg" alt="Arrow Down" width={40} height={40} className="fill-current invert" />
+							<Image src="/assets/arrow_down.svg" alt="Arrow Down" width={40} height={40} className={`fill-current ${modeDark === 'Dark' ? 'invert' : ''}`} />
 						</motion.div>
 					</a>
 				</div>

@@ -27,7 +27,10 @@ export const metadata = {
 
 export default function RootLayout({children}) {
 	return (
-		<html lang="en">
+		<html lang="en" translate="no" className="dark">
+			<head>
+				<meta name="google" content="notranslate" />
+			</head>
 			<body className={`${geistSans.variable} ${geistMono.variable} ${bebasNeue.variable} antialiased`}>{children}</body>
 		</html>
 	)
