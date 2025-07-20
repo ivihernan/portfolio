@@ -18,7 +18,7 @@ import {useEffect, useRef, useState} from 'react'
 
 //Cada vez que paso por cada letra se anima gracias a framer-motion
 //Con un map del texto vamos iterando letra a letra para poder hacer el efecto
-const Magnetic = ({children}) => {
+const Magnetic = ({children, modeDark}) => {
 	const [isHovering, setIsHovering] = useState(false)
 	const mouseX = useMotionValue(0)
 	const mouseY = useMotionValue(0)
@@ -36,14 +36,20 @@ const Magnetic = ({children}) => {
 		mouseX.set(event.clientX - bounds.left)
 		mouseY.set(event.clientY - bounds.top)
 	}
+
+	const borderColor = modeDark === 'Dark' ? '#E8F9FF' : '#B6F500'
+	const hoverColor = modeDark === 'Dark' ? '#E8F9FF' : '#B6F500'
+	const textColor = modeDark === 'Dark' ? 'text-white' : 'text-black'
+
 	return (
 		<span ref={ref} onMouseMove={handleMouseMove} onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)} className="relative inline-block text-fill">
 			{isHovering && (
 				<motion.div
-					className="absolute top-0 left-0 z-[-1] h-10 w-10 rounded-full bg-transparent border-2 border-[#B6F500] pointer-events-none "
+					className={`absolute top-0 left-0 z-[-1] h-10 w-10 rounded-full bg-transparent border-2 pointer-events-none`}
 					style={{
 						x,
 						y,
+						border: `2px solid ${borderColor}`,
 					}}
 				/>
 			)}
@@ -53,8 +59,8 @@ const Magnetic = ({children}) => {
 					key={index}
 					whileHover={{
 						scale: 1.5,
-						color: '#B6F500',
-						textShadow: '0px 0px 4px #B6F500',
+						color: hoverColor,
+						textShadow: `0px 0px 4px ${hoverColor}`,
 					}}
 					transition={{type: 'spring', stiffness: 300, damping: 15}}
 					className="inline-block relative z-10"
@@ -73,10 +79,10 @@ export default function HomePage({modeDark}) {
 				<div className="mx-auto flex flex-col h-screen w-screen items-center justify-center">
 					<div className="w-full h-full flex flex-col justify-center items-center gap-4 cursor-default">
 						<div className="w-full max-w-2xl text-center font-bebas text-4xl md:text-6xl text-outline">
-							Hey, I'm <Magnetic children="Ivan" /> <Magnetic children="Hernandez" />
+							Hey, I'm <Magnetic modeDark={modeDark} children="Ivan" /> <Magnetic modeDark={modeDark} children="Hernandez" />
 						</div>
 						<div className="w-full max-w-2xl text-center text-4xl font-bebas md:text-6xl text-outline ">
-							But you can call me <Magnetic children="Ivan" />
+							But you can call me <Magnetic modeDark={modeDark} children="Ivan" />
 						</div>
 						<div className={`font-bebas gap-2 text-start mt-2 text-xl max-sm:text-lg max-md:px-8 ${modeDark === 'Dark' ? 'text-white/60' : 'text-black/50'}`}>
 							<p>I am 19 years old, I am studying telecommunications engineering, </p>
