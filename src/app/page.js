@@ -4,7 +4,7 @@ import {useState, useEffect} from 'react'
 import Navbar from '@/components/Navbar'
 import HomePage from '@/components/HomePage'
 import Work from '@/components/Work'
-import About from '@/components/about'
+import About from '@/components/About'
 import Footer from '@/components/Footer'
 
 export default function Home() {
