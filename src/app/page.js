@@ -5,7 +5,7 @@ import Navbar from '@/components/Navbar'
 import HomePage from '@/components/HomePage'
 import Work from '@/components/Work'
 //En local para que funcione el import tiene que ser About pero para produccion tiene que ser about
-import About from '@/components/About'
+import About from '@/components/about'
 import Footer from '@/components/Footer'
 
 export default function Home() {
