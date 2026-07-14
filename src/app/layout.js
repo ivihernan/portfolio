@@ -20,6 +20,21 @@ const bebasNeue = Bebas_Neue({
 export const metadata = {
 	title: 'Ivan Hernandez Pollino',
 	description: 'Mi portfolio personal donde puedes conocerme un poco más viendo algunos de mis proyectos y quien soy.',
+	keywords: ['Ivan', 'Hernandez', 'Pollino', 'Portfolio', 'Desarrollador', 'Web', 'Fullstack', 'React', 'Next.js', 'JavaScript', 'CSS', 'HTML'],
+	authors: [{name: 'Ivan Hernandez Pollino'}],
+	creators: 'Ivan Hernandez Pollino',
+	openGraph: {
+		title: 'Ivan Hernandez Pollino',
+		description: 'Mi portfolio personal donde puedes conocerme un poco más viendo algunos de mis proyectos y quien soy.',
+		url: 'https://ivihernan.vercel.app',
+		siteName: 'Ivan Hernandez Pollino',
+		locale: 'es_ES',
+		type: 'website',
+	},
+	robots: {
+		index: true,
+		follow: true,
+	},
 	icons: {
 		icon: '/assets/logo_RRSS.png',
 	},
@@ -30,6 +45,7 @@ export default function RootLayout({children}) {
 		<html lang="en" translate="no" className="dark">
 			<head>
 				<meta name="google" content="notranslate" />
+				<meta charSet="utf-8" />
 			</head>
 			<body className={`${geistSans.variable} ${geistMono.variable} ${bebasNeue.variable} antialiased`}>{children}</body>
 		</html>

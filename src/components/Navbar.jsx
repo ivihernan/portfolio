@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 import {useScrollSpy} from '@/hooks/useScrollSpy'
 
-export default function Navbar({modeDark, setModeDark}) {
+export default function Navbar({modeDark, setModeDark, language, setLanguage}) {
 	const items = ['Home', 'Work', 'About', 'Contact']
 
 	const [mobileOpen, setMobileOpen] = useState(false)
