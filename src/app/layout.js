@@ -23,6 +23,9 @@ export const metadata = {
 	keywords: ['Ivan', 'Hernandez', 'Pollino', 'Portfolio', 'Desarrollador', 'Web', 'Fullstack', 'React', 'Next.js', 'JavaScript', 'CSS', 'HTML'],
 	authors: [{name: 'Ivan Hernandez Pollino'}],
 	creators: 'Ivan Hernandez Pollino',
+	verification: {
+		google: 'fY0UAC7fDjHrTXitcALXBTV_4VYDQN1iTaZo1ddLqUU',
+	},
 	openGraph: {
 		title: 'Ivan Hernandez Pollino',
 		description: 'Mi portfolio personal donde puedes conocerme un poco más viendo algunos de mis proyectos y quien soy.',
